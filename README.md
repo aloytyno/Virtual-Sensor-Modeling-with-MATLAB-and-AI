@@ -1,6 +1,6 @@
 # NASA Aircraft Low Code
 
-Demo materials used in the Low Code Data Analysis seminar.
+Demo materials used in the Low Code Data Analysis seminar. **You do not need to use the MATLAB Project to show this demo. Simply cd into the Demos directory and run the live script.**
 
 ## Recording
 
@@ -25,4 +25,4 @@ All
 
 ## Contact
 
-Adam Filion
+Adam Filion, Kevin Cohan
