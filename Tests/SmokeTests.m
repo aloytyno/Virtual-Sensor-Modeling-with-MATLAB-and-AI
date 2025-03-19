@@ -29,12 +29,22 @@ classdef SmokeTests < matlab.unittest.TestCase
     methods (Test)
         
         function demoShouldNotWarn(testCase, DemoFile)       
-            testCase.verifyWarningFree(DemoFile);
-            
+            testCase.verifyWarningFree( @() openAndRun(testCase,DemoFile) );
         end
         
-        
-        
+    end
+
+    methods
+
+        function openAndRun(~,DemoFile)
+            d = [func2str(DemoFile),'.mlx'];
+            cp = currentProject;
+            f = char(fullfile(cp.RootFolder,"Demos",d));
+            edit(f);
+            matlab.internal.liveeditor.executeAndSave(f);
+            matlab.desktop.editor.getAll().closeNoPrompt;
+        end
+
     end
 
 end
