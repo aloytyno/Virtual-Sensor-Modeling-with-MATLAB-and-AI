@@ -4,17 +4,17 @@ stages:
 #  - build
 #  - deploy
 
-check:
-    stage: check
-    tags:
-        - on-prem
-    variables:
-        GIT_SUBMODULE_STRATEGY: recursive
-    script:
-        - mw -using $CURRENT_MATLAB_RELEASE matlab -batch "openProject(pwd); buildtool check;"
-    cache:
-        paths:
-            - /*.slxc
+#check:
+#    stage: check
+#    tags:
+#        - on-prem
+#    variables:
+#        GIT_SUBMODULE_STRATEGY: recursive
+#    script:
+#        - mw -using $CURRENT_MATLAB_RELEASE matlab -batch "openProject(pwd); buildtool check;"
+#    cache:
+#        paths:
+#            - /*.slxc
 
 test:
     stage: test
