@@ -42,6 +42,7 @@ classdef SmokeTests < matlab.unittest.TestCase
             f = char(fullfile(cp.RootFolder,"Demos",d));
             edit(f);
             matlab.internal.liveeditor.executeAndSave(f);
+            export(f);
             matlab.desktop.editor.getAll().closeNoPrompt;
         end
 
