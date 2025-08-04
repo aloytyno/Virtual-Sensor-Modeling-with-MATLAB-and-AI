@@ -12,7 +12,7 @@ jobs:
         with:
           products: >
             MATLAB
-            Deep_Learning_Toolbox
+            Statistics_and_Machine_Learning_Toolbox
       - name: Run build
         uses: matlab-actions/run-build@v2
       - name: Upload results artifact
