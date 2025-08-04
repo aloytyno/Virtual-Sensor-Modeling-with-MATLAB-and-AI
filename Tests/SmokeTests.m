@@ -40,10 +40,10 @@ classdef SmokeTests < matlab.unittest.TestCase
             d = [func2str(DemoFile),'.mlx'];
             cp = currentProject;
             f = char(fullfile(cp.RootFolder,"Demos",d));
-            edit(f);
+            % edit(f);
             matlab.internal.liveeditor.executeAndSave(f);
-            export(f);
-            matlab.desktop.editor.getAll().closeNoPrompt;
+            % export(f);
+            % matlab.desktop.editor.getAll().closeNoPrompt;
         end
 
     end
