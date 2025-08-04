@@ -1,20 +1,15 @@
 function plan = buildfile
-
 import matlab.buildtool.tasks.*
+import matlab.unittest.plugins.CodeCoveragePlugin
+import matlab.unittest.plugins.codecoverage.CoverageResult
 
-% Create a plan from the task functions
 plan = buildplan(localfunctions);
 
-% Make the "test" task the default task in the plan
-plan.DefaultTasks = "test";
+plan("check") = CodeIssuesTask;
+plan("test") = TestTask(Dependencies="check",...
+    TestResults="test-results/results.xml");
 
-% Setting up Dependancies
-plan("check") = CodeIssuesTask();
-plan("test") = TestTask(Dependencies="check");
-% plan("build").Dependencies = "test";
-% plan("deploy").Dependencies = "build";
-
-% To get templates for build and deploy tasks for Web Apps and MATLAB
-% Production Server run "aecontent.addInsideLabsCD".
-
+plan.DefaultTasks = ["check" "test"];
 end
+
+
