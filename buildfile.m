@@ -1,7 +1,5 @@
 function plan = buildfile
 import matlab.buildtool.tasks.*
-import matlab.unittest.plugins.CodeCoveragePlugin
-import matlab.unittest.plugins.codecoverage.CoverageResult
 
 plan = buildplan(localfunctions);
 
